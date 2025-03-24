@@ -30,7 +30,7 @@ You can start editing by modifying `app/page.tsx`. The page auto-updates as you 
 
 ## 🌎 Live Demo
 
-🔗 [Your Live Portfolio Link Here]
+🔗 [https://codebykaran-2o.vercel.app/]
 
 ## 📦 Deployment
 
