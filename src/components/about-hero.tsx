@@ -13,8 +13,8 @@ export default function AboutHeroSection() {
   const [activeCategory, setActiveCategory] = useState(skillCategories[0].name);
 
   return (
-    <section className="w-full py-12 md:py-12">
-      <div className="container px-4 md:px-6">
+    <section className="w-full py-12">
+      <div className="px-4">
         <div className="mx-auto max-w-6xl">
           {/* About Me Header */}
           <motion.div

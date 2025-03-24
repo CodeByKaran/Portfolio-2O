@@ -8,12 +8,8 @@ const Projects = () => {
   const { handleViewportEnter, handleViewportLeave } = useCustomScroll();
 
   return (
-    <section
-      id="Projects"
-      className="center relative w-full overflow-hidden py-12"
-    >
+    <section id="Projects" className="center w-full overflow-hidden md:py-12">
       <motion.div
-        className="container px-4 md:px-6"
         onViewportEnter={() => handleViewportEnter("Projects")}
         onViewportLeave={() => handleViewportLeave("About", "Contact")}
       >

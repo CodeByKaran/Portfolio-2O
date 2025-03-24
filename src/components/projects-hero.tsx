@@ -26,7 +26,7 @@ export default function ProjectsHeroSection() {
 
   return (
     <section className="w-full py-12 md:py-24">
-      <div className="container px-4 md:px-6">
+      <div className="px-4">
         <div className="mx-auto max-w-6xl">
           {/* Projects Header */}
           <motion.div
