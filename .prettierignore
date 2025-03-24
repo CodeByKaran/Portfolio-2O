@@ -1,0 +1,10 @@
+tests/fixtures
+.github/
+dist/
+README.md
+build/
+node_modules/
+.next/
+.env
+.env.local
+dist/
