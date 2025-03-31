@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
-import AboutHeroSection from "@/components/about-hero";
 import { useCustomScroll } from "@/hooks/useCustomScroll";
+import AboutHero from "@/components/about/AboutHero";
+import ProfileSection from "@/components/about/ProfileSection";
+import SkillsSection from "@/components/about/SkillsSection";
+import PhilosophySection from "@/components/about/PhilosophySection";
 
 const About = () => {
   const { handleViewportEnter, handleViewportLeave } = useCustomScroll();
@@ -13,7 +16,18 @@ const About = () => {
         onViewportEnter={() => handleViewportEnter("About")}
         onViewportLeave={() => handleViewportLeave("Home", "Projects")}
       >
-        <AboutHeroSection />
+        <div className="px-4">
+          <div className="mx-auto max-w-6xl">
+            <AboutHero />
+            <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
+              <ProfileSection />
+              <div className="space-y-8">
+                <SkillsSection />
+                <PhilosophySection />
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

@@ -33,6 +33,7 @@ const SpringIcon = ({ icon }: { icon: Icon }) => {
         height={40}
         alt={icon.alt}
         className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10"
+        priority
       />
     </motion.div>
   );
