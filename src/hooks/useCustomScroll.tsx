@@ -18,7 +18,7 @@ const useCustomScroll = () => {
       const element = document.getElementById(item);
 
       if (element) {
-        const yOffset = -100; // Adjust this value based on your header height
+        const yOffset = -20; // Adjust this value based on your header height
         const y =
           element.getBoundingClientRect().top + window.scrollY + yOffset;
 

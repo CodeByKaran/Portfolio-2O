@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useIsMobile } from "@/hooks/useMobile";
 
 export default function AnimatedGradient() {
   const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -30,22 +32,31 @@ export default function AnimatedGradient() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      <motion.div
-        className="absolute inset-0"
-        animate={{
-          background: [
-            `radial-gradient(circle at 0% 0%, ${colors[0]} 0%, transparent 50%)`,
-            `radial-gradient(circle at 0% 0%, ${colors[1]} 0%, transparent 50%)`,
-            `radial-gradient(circle at 0% 0%, ${colors[2]} 0%, transparent 50%)`,
-            `radial-gradient(circle at 0% 0%, ${colors[0]} 0%, transparent 50%)`,
-          ],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Number.POSITIVE_INFINITY,
-          repeatType: "reverse",
-        }}
-      />
+      {isMobile ? (
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(circle at 0% 0%, ${colors[0]} 0%, transparent 50%),radial-gradient(circle at 0% 0%, ${colors[1]} 0%, transparent 50%),radial-gradient(circle at 0% 0%, ${colors[2]} 0%, transparent 50%)`,
+          }}
+        />
+      ) : (
+        <motion.div
+          className="absolute inset-0"
+          animate={{
+            background: [
+              `radial-gradient(circle at 0% 0%, ${colors[0]} 0%, transparent 50%)`,
+              `radial-gradient(circle at 0% 0%, ${colors[1]} 0%, transparent 50%)`,
+              `radial-gradient(circle at 0% 0%, ${colors[2]} 0%, transparent 50%)`,
+              `radial-gradient(circle at 0% 0%, ${colors[0]} 0%, transparent 50%)`,
+            ],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+      )}
     </div>
   );
 }

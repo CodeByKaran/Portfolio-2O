@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectsHeroSection from "@/components/projects-hero";
+import ProjectsHero from "@/components/project/ProjectHero";
 import { useCustomScroll } from "@/hooks/useCustomScroll";
 import { motion } from "motion/react";
 
@@ -13,7 +13,7 @@ const Projects = () => {
         onViewportEnter={() => handleViewportEnter("Projects")}
         onViewportLeave={() => handleViewportLeave("About", "Contact")}
       >
-        <ProjectsHeroSection />
+        <ProjectsHero />
       </motion.div>
     </section>
   );

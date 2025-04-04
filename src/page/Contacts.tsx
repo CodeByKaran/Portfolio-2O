@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import ContactsHeroSection from "@/components/contacts-hero";
 import { useCustomScroll } from "@/hooks/useCustomScroll";
+import ContactsHero from "@/components/contact/ContactHero";
 
 const Contacts = () => {
   const { handleViewportEnter, handleViewportLeave } = useCustomScroll();
@@ -12,7 +12,7 @@ const Contacts = () => {
         onViewportEnter={() => handleViewportEnter("Contact")}
         onViewportLeave={() => handleViewportLeave("Projects", "Contact")}
       >
-        <ContactsHeroSection />
+        <ContactsHero/>
       </motion.div>
     </section>
   );
