@@ -1,7 +1,9 @@
+import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     // Handler to call on window resize
@@ -22,7 +24,7 @@ export function useIsMobile() {
 
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures effect runs only on mount/unmount
+  }, [theme, setTheme]); // Empty array ensures effect runs only on mount/unmount
 
   return isMobile;
 }
