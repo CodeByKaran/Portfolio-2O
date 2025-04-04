@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { isOnce } from "@/constants";
 import { useCustomScroll } from "@/hooks/useCustomScroll";
 
@@ -25,7 +24,7 @@ export default function HeroActions() {
         View My Work
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </Button>
-      <Link
+      <a
         href="https://res-console.cloudinary.com/dlvlkfl32/media_explorer_thumbnails/255ffd4f56c66ce9800b77c733a3322e/download"
         download="Karan_Kumar_Resume.pdf"
         target="_blank"
@@ -35,7 +34,7 @@ export default function HeroActions() {
           Download Resume
           <Download className="ml-2 h-4 w-4" />
         </Button>
-      </Link>
+      </a>
     </motion.div>
   );
 }
