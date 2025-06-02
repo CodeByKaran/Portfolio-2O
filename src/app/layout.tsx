@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
@@ -38,6 +39,7 @@ export default function RootLayout({
             <AnimatedGradient />
             <GlassNavigation />
             {children}
+            <Analytics />
           </NavItemProvider>
         </ThemeProvider>
       </body>
